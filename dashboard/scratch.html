@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Primary Meta Tags -->
+<title>Locks89 Scratch off Raffle</title>
+<meta name="title" content="Locks89 Scratch off Raffle" />
+<meta name="description" content="Win premium months for the locks89 discord with these lottery tickets! Play today for just $5/ticket." />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sportsprophet.bet/" />
+<meta property="og:title" content="Locks89 Scratch off Raffle" />
+<meta property="og:description" content="Win premium months for the locks89 discord with these lottery tickets! Play today for just $5/ticket." />
+<meta property="og:image" content="https://i.imgur.com/0RHSiY9.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://sportsprophet.bet" />
+<meta property="twitter:title" content="Locks89 Scratch off Raffle" />
+<meta property="twitter:description" content="Win premium months for the locks89 discord with these lottery tickets! Play today for just $5/ticket." />
+<meta property="twitter:image" content="https://i.imgur.com/0RHSiY9.png" />
+
+<!-- Meta Tags Generated with https://metatags.io -->
+    <style>
+        body {
+        background-color: #242424;
+        height: 100%;
+        z-index: 0;
+    }
+
+    #defaultCanvas0 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 300;
+        border-radius: 0px;
+    }
+
+    #sketch-container {
+        position: relative;
+    }
+
+    :root {
+        --btn-duration-slow: 2s;
+        --btn-duration-normal: 3s;
+        --btn-duration-fast: 5s;
+        --btn-default-color: #7cfc00;
+        --btn-blue-color: #00bcd4;
+        --btn-purple-color: #772aff;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #151515;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    @media only screen and (max-width: 800px) {
+
+      .rules{
+
+        width:100% !important;
+      }
+      .modal{
+        width:100% !important;
+      }
+    }
+
+    .neon-block .block {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 60px auto;
+        width: 391px;
+        height: 250px;
+        background: linear-gradient(45deg, #272325 40%, #020104);
+        color: #fff;
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-family: monospace;
+        border-radius: 10px;
+    }
+
+    .neon-block .block:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        z-index: -1;
+        background: linear-gradient(45deg, #ff005e, #fbff00);
+        animation: neon-block 1.5s linear infinite;
+    }
+
+    .neon-block .block .rainbow {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+        filter: blur(15px);
+        z-index: -2;
+    }
+
+    .neon-block .block .rainbow:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(315deg, #ff005e, #fbff00);
+    }
+
+    .neon-block .block .rainbow:after {
+        animation: neon-block 1.5s linear infinite;
+    }
+
+    @keyframes neon-block {
+        from {
+            filter: hue-rotate(0deg);
+        }
+
+        to {
+            filter: hue-rotate(360deg);
+        }
+    }
+
+    h1,
+    p,
+    h3 {
+        color: white;
+        text-align: left;
+        font-family: 'Arial';
+    }
+    /* Styling for Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 50%;
+    height: 60%;
+    background-color: #2b2b2b;
+    border: none;
+    border-radius: 15px;
+}
+
+/* Style for Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Additional Styling for Number Input Modal */
+#firstModal {
+    /* Add any specific styling for the first modal */
+}
+
+/* Additional Styling for Credit Card Input Modal */
+#secondModal {
+    /* Add any specific styling for the second modal */
+}
+.btn{
+      margin-left: 10px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+    border: none;
+    width: 120px;
+}
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <center>
+        <h1 style="background-color: #00ffbf; width: fit-content; padding: 25px; border-radius: 20px; font-family: 'arial'">Locks89 Raffle</h1>
+    </center>
+    <br><br>
+    <center>
+        <div style="display: flex; flex-wrap: wrap;justify-content: center;">
+            <h3>Tickets:<span id="ticketsCount"></span></h3><button class="btn" onclick="buyMore()">Buy More +</button>
+        </div>
+    </center>
+    <main>
+        <section class="neon-block" id="shitakiText" style="display:none">
+            <div class="block">
+                <span class="rainbow"></span>
+                <h4 style="text-align:center;">Looks like you are all out of tickets. Buy more to play again.</h4>
+            </div>
+        </section>
+        <section class="neon-block" id="lottoTicket" style="display:none">
+            <div class="block">
+                <span class="rainbow"></span>
+                <div id="sketch-container"></div>
+            </div>
+        </section>
+        <center><button id="refresh_button" style="padding:15px;border-radius:10px;border:none;display: none;" onclick="nextTicket()">Next Ticket</button></center><br>
+        <center>
+            <div class="rules" style="width:30%">
+                <center>
+                    <h1 style="text-align: center;">Rules:</h1>
+                </center>
+                <p>1. You get one free ticket, then every ticket after is $5.</p>
+                <p>2. There are 3 winning tickets to win 1 month of premium.</p>
+                <p>3. There are 2 winning tickets to win 6 months of premium.</p>
+                <p>4. There is 1 golden ticket to win lifetime premium.</p>
+                <p>5. To win, you must send a screenshot to a discord mod of your winning ticket. Once verified, you will be granted the necessary roles and priveledges.</p>
+            </div>
+        </center>
+    </main>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeModals()"></div>
+    <!-- First Modal (Number Input) -->
+    <div class="modal" id="firstModal" style="display:none">
+        <center>
+            <h1 style="text-align: center;">Buy Tickets</h1>
+        </center><br><br>
+        <center><input style="text-align:right;padding:10px" type="number" id="numberInput" min="1" value="1" /><br></center><br><br>
+        <center><button style="padding:15px;border-radius:10px;border:none" onclick="handlePaymentMethod()">Purchase Now</button></center>
+    </div>
+    <!-- Second Modal (Credit Card Input) -->
+    <div class="modal" id="secondModal" style="display:none">
+        <center>
+            <h1 style="text-align: center;">Add Payment<br> Method</h1>
+        </center> <br><br>
+        <!-- Your payment form goes here -->
+        <form id="payment-form">
+            <!-- Card details input fields -->
+            <div id="card-element"></div>
+            <!-- Display any payment errors -->
+            <div id="card-errors" role="alert"></div>
+            <!-- Submit button -->
+            <br><br>
+            <center><button style="padding:15px;border-radius:10px;border:none" type="submit">Submit Payment</button></center>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeTicketsCount();
+
+    });
+
+    function initializeTicketsCount() {
+        var ticketsCount = localStorage.getItem('ticketsCount');
+
+        if (ticketsCount === null) {
+            // If ticketsCount doesn't exist in localStorage, create it and set its value to 1
+            localStorage.setItem('ticketsCount', 1);
+            console.log("Initialized ticketsCount in localStorage with a value of 1.");
+            document.getElementById("ticketsCount").innerText = 1
+            document.getElementById("lottoTicket").style.display = "block"
+        } else if (ticketsCount == 0) {
+            // TicketsCount already exists in localStorage
+            document.getElementById("shitakiText").style.display = "block"
+            document.getElementById("ticketsCount").innerText = ticketsCount
+        } else {
+            // TicketsCount already exists in localStorage
+            console.log("ticketsCount already exists in localStorage.");
+            document.getElementById("ticketsCount").innerText = ticketsCount
+            document.getElementById("lottoTicket").style.display = "block"
+        }
+    }
+    let images = [
+        "https://i.imgur.com/g92c7Fv.png",
+        "https://i.imgur.com/xUCYHn3.png",
+        "https://i.imgur.com/PuFgZi0.png",
+        "https://i.imgur.com/WY9NeJY.png",
+       "https://i.imgur.com/lCYixlx.png"
+    ];
+
+    let img;
+    let stamp;
+    let topLayer;
+
+    function preload() {
+        // Randomly select an image from the array
+        let randomIndex = floor(random(images.length));
+        img = loadImage(images[randomIndex]);
+        stamp = loadImage("https://i.imgur.com/0RHSiY9.png");
+    }
+
+    function setup() {
+        let canvas = createCanvas(400, 260);
+        canvas.parent('sketch-container'); // Set the parent container by ID
+
+        topLayer = createGraphics(width, height);
+        topLayer.background(stamp);
+        topLayer.imageMode(CENTER);
+        topLayer.strokeWeight(40);
+        topLayer.blendMode(REMOVE);
+        var element = document.getElementById('defaultCanvas0');
+
+        if (element) {
+            var isDragging = false;
+            var initialX, initialY;
+
+            function handleStart(e) {
+                if (e.type === 'mousedown' || e.type === 'touchstart') {
+                    e.preventDefault(); // Prevent default browser behavior for touch events
+                }
+
+                isDragging = true;
+                initialX = (e.type === 'mousedown') ? e.clientX : e.touches[0].clientX;
+                initialY = (e.type === 'mousedown') ? e.clientY : e.touches[0].clientY;
+            }
+
+            function handleMove(e) {
+                if (isDragging) {
+                    var clientX = (e.type === 'mousemove') ? e.clientX : e.touches[0].clientX;
+                    var clientY = (e.type === 'mousemove') ? e.clientY : e.touches[0].clientY;
+
+                    var deltaX = clientX - initialX;
+                    var deltaY = clientY - initialY;
+
+                    // Perform your drag-related operations here
+                    console.log("Ticket scratched, burn the ticket");
+                    document.getElementById("refresh_button").style.display = "block"
+
+                    // Update the tickets count in localStorage
+                    var ticketsCount = localStorage.getItem('ticketsCount');
+                    if (ticketsCount) {
+                        ticketsCount = parseInt(ticketsCount, 10);
+                        if (!isNaN(ticketsCount) && ticketsCount > 0) {
+                            ticketsCount -= 1;
+                            localStorage.setItem('ticketsCount', ticketsCount);
+                            console.log(`Remaining tickets: ${ticketsCount}`);
+                            document.getElementById("ticketsCount").innerText = ticketsCount
+                        } else {
+                            console.error("Invalid or no tickets remaining.");
+                        }
+                    } else {
+                        console.error("localStorage variable 'ticketsCount' not found.");
+                    }
+
+                    // Remove the event listeners
+                    element.removeEventListener('mousedown', handleStart);
+                    element.removeEventListener('touchstart', handleStart);
+                    element.removeEventListener('mousemove', handleMove);
+                    element.removeEventListener('touchmove', handleMove);
+                    element.removeEventListener('mouseup', handleEnd);
+                    element.removeEventListener('touchend', handleEnd);
+                }
+            }
+
+            function handleEnd() {
+                isDragging = false;
+            }
+
+            // Add event listeners
+            element.addEventListener('mousedown', handleStart);
+            element.addEventListener('touchstart', handleStart);
+            element.addEventListener('mousemove', handleMove);
+            element.addEventListener('touchmove', handleMove);
+            element.addEventListener('mouseup', handleEnd);
+            element.addEventListener('touchend', handleEnd);
+        } else {
+            console.error("Element with id 'defaultCanvas0' not found.");
+        }
+
+
+
+    }
+
+    function draw() {
+        image(img, 0, 0, width, height);
+
+        if (mouseIsPressed) {
+            topLayer.line(pmouseX, pmouseY, mouseX, mouseY);
+        }
+
+        image(topLayer, 0, 0);
+    }
+
+    function buyMore() {
+
+        if (localStorage.getItem("paymentMethod")) {
+            console.log("PUSSSSSY")
+            // Display the first modal
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("firstModal").style.display = "block";
+        } else {
+            // Display the second modal
+            console.log("DICCKCKKKKKKS")
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("secondModal").style.display = "block";
+        }
+    };
+
+    function purchaseNow() {
+        // Logic for handling the "Purchase Now" button in the first modal
+        // Add your code here
+    }
+
+    function savePaymentMethod() {
+        // Logic for saving payment method and updating local storage
+        // Add your Stripe integration and local storage update code here
+    }
+
+
+    // Set your publishable key
+    const stripe = Stripe('pk_live_51OlHdZBouWriOqSosLceRlXOwFp5wYz3vM5lJfozroEBVm4LnoGrrTDdSk1akNDcKAqVsrpFqHAEBHDSioyWw8or005haS2MJN');
+
+    // Create an instance of Elements
+    const elements = stripe.elements();
+    // Check for existing paymentMethod in localStorage
+    const storedPaymentMethod = localStorage.getItem('paymentMethod');
+
+    // Create a card Element and mount it to the card-element div
+    const card = elements.create('card');
+    card.mount('#card-element');
+
+    // Handle real-time validation errors on the card element
+    card.addEventListener('change', ({ error }) => {
+        const displayError = document.getElementById('card-errors');
+        if (error) {
+            displayError.textContent = error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+
+    // Handle form submission
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        // Create PaymentMethod with card information
+        const { paymentMethod, error } = await stripe.createPaymentMethod({
+            type: 'card',
+            card: card,
+        });
+
+        if (error) {
+            // Display error to the user
+            const displayError = document.getElementById('card-errors');
+            displayError.textContent = error.message;
+        } else {
+            try {
+                // Create a customer with the payment method
+                const response = await fetch('https://cryptaverse.xyz/create-customer', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ paymentMethodId: paymentMethod.id }),
+                });
+
+                const result = await response.json();
+
+                if (result && result.customerId) {
+                    // Save both customer ID and PaymentMethod ID to localStorage
+                    localStorage.setItem('customerId', result.customerId);
+                    localStorage.setItem('paymentMethod', paymentMethod.id);
+                    document.getElementById("secondModal").style.display = "none";
+                    document.getElementById("firstModal").style.display = "block";
+                    storedPaymentMethod = paymentMethod.id;
+                } else {
+                    console.error('Error creating customer:', result.error);
+                }
+            } catch (error) {
+                console.error('Error creating customer:', error.message);
+            }
+        }
+    });
+
+
+    // Function to send PaymentMethod ID to your server
+    async function handlePaymentMethod(paymentMethod) {
+        var quantity = document.getElementById("numberInput").value
+        var amount = Math.round(quantity * 5 * 100);
+        console.log(amount)
+        const response = await fetch('https://cryptaverse.xyz/charge', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ paymentMethodId: localStorage.getItem('paymentMethod'), amount: amount, customerID: localStorage.getItem('customerId') }),
+        });
+        console.log(JSON.stringify({ paymentMethodId: localStorage.getItem('paymentMethod'), amount: amount }))
+        const result = await response.json();
+
+        if (result && result.error) {
+            // Update the content of an element with the id 'card-errors' with the error message
+            document.getElementById('card-errors').innerHTML = result.error;
+        } else {
+            var ticketsInput = document.getElementById("numberInput");
+            var ticketsCountElement = document.getElementById("ticketsCount");
+
+            // Ensure ticketsInput is the correct element
+            if (ticketsInput && ticketsInput.tagName.toLowerCase() === "input" && ticketsCountElement) {
+                var tickets = parseInt(ticketsInput.value, 10);
+                var ticketsCount = parseInt(ticketsCountElement.innerText, 10);
+
+                if (!isNaN(tickets) && !isNaN(ticketsCount)) {
+                    ticketsCount += tickets;
+                    localStorage.setItem('ticketsCount', ticketsCount);
+
+                    // Update the displayed tickets count
+                    ticketsCountElement.innerText = ticketsCount;
+                    document.getElementById("shitakiText").style.display = "none"
+                    document.getElementById("lottoTicket").style.display = "block"
+                    document.getElementById("numberInput").value = 1
+                    closeModals();
+                } else {
+                    console.error('Invalid ticket value or ticketsCount value.');
+                }
+            } else {
+                console.error('Invalid elements for numberInput or ticketsCount.');
+            }
+
+        }
+    }
+
+
+    function closeModals() {
+        document.getElementById("firstModal").style.display = "none"
+        document.getElementById("secondModal").style.display = "none"
+        document.getElementById("overlay").style.display = "none"
+
+
+    }
+    function nextTicket(){
+      var ticketsCount = localStorage.getItem('ticketsCount');
+      console.log(ticketsCount)
+      if(ticketsCount == 0){
+        document.getElementById("lottoTicket").style.display = "none"
+        document.getElementById("shitakiText").style.display = "block"
+      }else{
+        location.reload()
+      }
+    }
+    </script>
+</body>
+
+</html>
