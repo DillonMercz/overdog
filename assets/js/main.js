@@ -26,7 +26,7 @@ Author: GrayGrids
         var logo = document.querySelector('.navbar-brand img')
         if (window.pageYOffset > sticky) {
           header_navbar.classList.add("sticky");
-          logo.src = 'https://i.imgur.com/xYcmo9K.png';
+          logo.src = 'https://i.imgur.com/nYnrYC9.png';
           logo.style.borderRadius = "0px"
         } else {
           header_navbar.classList.remove("sticky");
