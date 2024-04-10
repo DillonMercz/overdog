@@ -8418,7 +8418,7 @@ h1, h2, h3, h4, h5,
 			      			<p id="login-error" style="display:none"></p>
 			      		</div>
 			      	</div>
-							<div class="signin-form">
+							<form class="signin-form">
 			      		<div class="form-group mb-3">
 			      			<label class="label" for="name">Email</label>
 			      			<input type="text" class="form-control" placeholder="Email" id="loginEmail" required>
@@ -8441,7 +8441,7 @@ h1, h2, h3, h4, h5,
 										<a onclick="passwordReset()">Forgot Password</a>
 									</div>
 		            </div>
-		          </div>
+		          </form>
 		        </div>
 		      </div>
 				</div>
@@ -8475,7 +8475,14 @@ h1, h2, h3, h4, h5,
     // Initialize Analytics
     const analytics = firebase.analytics();
 
-
+        // Check authentication state
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user) {
+            console.log("User Is not logged in")
+        }else {
+          location.href = "./dashboard/index.html"
+        }
+    });
     function login() {
         // Implement Firebase login logic
         const email = document.getElementById('loginEmail').value;
