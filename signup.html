@@ -8485,7 +8485,14 @@ h1, h2, h3, h4, h5,
     // Initialize Analytics
     const analytics = firebase.analytics();
 
-
+            // Check authentication state
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user) {
+            console.log("User Is not logged in")
+        }else {
+          location.href = "./dashboard/index.html"
+        }
+    });
     function login() {
         // Implement Firebase login logic
         const email = document.getElementById('loginEmail').value;
