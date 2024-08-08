@@ -26,7 +26,7 @@ Author: GrayGrids
         var logo = document.querySelector('.navbar-brand img')
         if (window.pageYOffset > sticky) {
           header_navbar.classList.add("sticky");
-          logo.src = 'https://i.imgur.com/nYnrYC9.png';
+          logo.src = 'https://i.imgur.com/xYcmo9K.png';
           logo.style.borderRadius = "0px"
         } else {
           header_navbar.classList.remove("sticky");
@@ -45,23 +45,23 @@ Author: GrayGrids
 
     
     // section menu active
-	function onScroll(event) {
-		var sections = document.querySelectorAll('.page-scroll');
-		var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    function onScroll(event) {
+        var sections = document.querySelectorAll('.page-scroll');
+        var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
-		for (var i = 0; i < sections.length; i++) {
-			var currLink = sections[i];
-			var val = currLink.getAttribute('href');
-			var refElement = document.querySelector(val);
-			var scrollTopMinus = scrollPos + 73;
-			if (refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
-				document.querySelector('.page-scroll').classList.remove('active');
-				currLink.classList.add('active');
-			} else {
-				currLink.classList.remove('active');
-			}
-		}
-	};
+        for (var i = 0; i < sections.length; i++) {
+            var currLink = sections[i];
+            var val = currLink.getAttribute('href');
+            var refElement = document.querySelector(val);
+            var scrollTopMinus = scrollPos + 73;
+            if (refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
+                document.querySelector('.page-scroll').classList.remove('active');
+                currLink.classList.add('active');
+            } else {
+                currLink.classList.remove('active');
+            }
+        }
+    };
 
     window.document.addEventListener('scroll', onScroll);
     
